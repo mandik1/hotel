@@ -16,7 +16,7 @@
 									<li><a class="active" href="{% url 'hotel:index' %}">Home</a></li>
 									<li><a href="{% url 'hotel:menu' %}">Menu</a></li>
 									{% if user.is_authenticated %}
-										{% if user.is_admin %}
+										{% if user.is_superuser %}
 										<li><a href="{% url 'hotel:dashboard_admin' %}">Dashboard</a></li>
 										{% else %}
 										<li><a href="{% url 'hotel:my_orders' %}">user Dashboard</a></li>

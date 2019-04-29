@@ -16,10 +16,10 @@
 									<li><a href="/">Home</a></li>
 									<li><a href="/menu/">Menu</a></li>
 									{% if user.is_authenticated %}
-										{% if user.is_admin %}
+										{% if user.is_superuser %}
 										<li><a href="{% url 'hotel:dashboard_admin' %}">Dashboard</a></li>
 										{% else %}
-										<li><a href="{% url 'hotel:my_orders' %}">user Dashboard</a></li>
+										<li><a href="{% url 'hotel:my_orders' %}">UserDashboard</a></li>
 										{% endif %}
 									<li><a href="/accounts/logout/">Logout</a></li>
 									{% else %}

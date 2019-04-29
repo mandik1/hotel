@@ -326,8 +326,8 @@ def placeOrder(request):
     mail_subject = 'Order Placed successfully'
     to = str(customer.customer.email)
     to_email.append(to)
-    from_email = 'pradeepgangwar39@gmail.com'
-    message = "Hi "+ customer.customer.first_name +" Your order was placed successfully. Please go to your dashboard to see your order history. <br> Your order id is "+ str(order.id) +""
+    from_email = 'nitinthakur229@gmail.com'
+    message = "Hi "+ customer.customer.first_name +" Your order was placed successfully. Please go to your dashboard to see your order history. <br> Your order id is "+ str(Order.id) +""
     send_mail(
         mail_subject,
         message,
