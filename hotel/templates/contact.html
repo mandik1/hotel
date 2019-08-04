@@ -1,0 +1,58 @@
+{% load staticfiles %}
+
+{% include "includes/landing_top.html" %}
+
+{% load mathfilters %}
+
+<body>
+	<div  class="bg-img">
+		<!-- banner -->
+		{% include "includes/banner1.html" %}
+		<!-- //banner -->
+    </div>
+    <br><br>
+    <div class="menu-heading">
+        <h2>Contact Us</h2><br><br>
+    </div>
+    <div class="row" >
+        <div class="col-md-6">
+                <div class="opinion" style="margin-bottom: 25px;">
+                        <h2>Leave Your Message</h2>
+                        <form action="#" method="POST" width>
+                            {% csrf_token %}
+                            <input type="text" name="name" placeholder="Name" required="">
+                            <input type="text" name="emailaddress" placeholder="Email" required="">
+                            <textarea name="message" placeholder="Message" required=""></textarea>
+                            <input type="submit" value="SEND">
+                        </form>
+                    </div>
+        </div>
+        <div class="col-md-6">
+        <div >
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.2713555170694!2d75.58644721462585!3d31.323878263953365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5a44fe0ad8e7%3A0xd5d2574fbe41e548!2sGuru+Nanak+Dev+University+College!5e0!3m2!1sen!2sin!4v1556866954896!5m2!1sen!2sin" width="1500px" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </div>
+    
+  
+    <div class="customer-heading-grids">
+            <div class="col-md-4 customer-grid">
+                <div class="customer-info">
+                    <p>Food-Mania <br>Address : New Mall road.<br>City : Jalandhar</p>
+                </div>
+               
+            </div>
+            <div class="col-md-4 customer-grid">
+                <div class="customer-info">
+                    <p>Contact Details :<br> Phone number :7549516442<br>Telephone : 01814575645<</p>
+                </div>
+
+            </div>
+            <div class="col-md-4 customer-grid">
+                <div class="customer-info">
+                    <p>Others Details :<br>Email : mandeeepkumar1@gmail.com<br>Helpline :9558475582 </p>
+                </div>
+     </div>
+     <br><br><br>
+     
+    {% include "includes/footer.html" %}

@@ -63,7 +63,7 @@ ul.nav.navbar-nav {
 }
 .top-nav ul li a{
     color: #fff !important;
-    font-size: 1em;
+    font-size: 1.5em;
     margin: 0;
     text-decoration: none;
     padding: 0;
@@ -111,18 +111,18 @@ div#bs-example-navbar-collapse-1 {
     margin: 2em 0 0 0;
 }
 .banner-grad-img {
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
 }
 .banner-grad-img img{
 	width: 100%;
-    border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-o-border-radius: 50%;
-	-ms-border-radius: 50%;
-    border: solid 8px #FFF;
+    border-radius: 0%;
+	-webkit-border-radius: 0%;
+	-moz-border-radius: 0%;
+	-o-border-radius: 0%;
+	-ms-border-radius: 0%;
+    border: solid 4px #FFF;
 }
 .banner-grad-img h4{
     margin: 1em 0 0 0;
@@ -262,7 +262,7 @@ div#bs-example-navbar-collapse-1 {
     margin: 3em 0 0 0;
 }
 .features-left-info{
-	background: url(../../images/f1.jpg) no-repeat 0px 0px;
+	background: url(../../images/Sanjeev-Kapoor.jpg) no-repeat 0px 0px;
     background-size: cover;
     min-height: 450px;
 }
@@ -513,7 +513,7 @@ i.fa.fa-twitter,i.fa.fa-facebook,i.fa.fa-instagram,i.fa.fa-pinterest{
 /*-- //copyright --*/
 /*--Shortcodes--*/
 .bg-img{
-    background: url(../../images/bg.jpg) no-repeat 0px -429px;
+    background: url(../../images/Pizza1.jpg) no-repeat 0px -429px;
     background-size: cover;
 }
 .code-banner{
@@ -2125,4 +2125,5 @@ h2.typoh2{
 		font-size: .9em;
 	}
 }
+
 /*-- //responsive --*/

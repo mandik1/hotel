@@ -95,17 +95,17 @@ class Order(models.Model):
 
 class Food(models.Model):
     indian = 'Indian'
-    south = 'South Indian'
-    gujarati = 'Gujarati'
-    punjabi = 'Punjabi'
-    fast = 'Fast Food'
+    pizza = 'Pizza'
+    burgers = 'Burgers'
+    rolls = 'Rolls'
+    noodels = 'Noodels'
     
     COURSE = (
         (indian,indian),
-        (south,south),
-        (gujarati,gujarati),
-        (punjabi,punjabi),
-        (fast,fast),
+        (pizza,pizza),
+        (burgers,burgers),
+        (rolls,rolls),
+        (noodels,noodels),
     )
 
     disabled = 'Disabled'
@@ -155,3 +155,10 @@ class Cart(models.Model):
 class DeliveryBoy(models.Model):
     order= models.ForeignKey(Order, on_delete=models.CASCADE)
     delivery_boy = models.ForeignKey(Staff, on_delete=models.CASCADE)
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=20)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    emailaddress = models.CharField(max_length=30)
+    message = models.TextField(max_length=200)

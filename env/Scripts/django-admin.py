@@ -1,4 +1,4 @@
-#!e:\development\restmgt\env\scripts\python.exe
+#!d:\my_project\restmgt\env\scripts\python.exe
 from django.core import management
 
 if __name__ == "__main__":

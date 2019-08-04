@@ -7,6 +7,8 @@ urlpatterns = [
     url(r'^cart/$', views.cart, name='cart'),
     url(r'^menu/$', views.menu, name='menu'),
     url(r'^myorders/$', views.my_orders, name='my_orders'),
+    url(r'^about/$', views.about,name='about'),
+    # url(r'^contact/$', views.contact,name='contact'),
     
     url(r'^dashboard/admin/users/$', views.users_admin, name='users_admin'),
     url(r'^dashboard/admin/orders/$', views.orders_admin, name='orders_admin'),
@@ -30,4 +32,6 @@ urlpatterns = [
     url(r'^addTocart/(?P<foodID>\d+)/(?P<userID>\d+)/$', views.addTocart, name='addTocart'),
 
     url(r'^dashboard/delivery_boy/$', views.delivery_boy, name='delivery_boy'),
+    url(r'^contact/$', views.contact_form, name='contacts'),
+    # url(r'^message/$', views.responsemessage, name='messages'),
 ]

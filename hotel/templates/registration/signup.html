@@ -3,6 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+{% include "includes/landing_top.html" %}
+    
+{% load mathfilters %}
 <head>
 
     <meta charset="utf-8">
@@ -11,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Caviar | Login</title>
+    <title>Food-Mania | Signup</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -28,8 +32,12 @@
 </head>
 
 <body>
-
-    {% include "includes/navbarheader.html" %}
+    <!-- {% include "includes/navbarheader.html" %} -->
+    <div  class="bg-img">
+		<!-- banner -->
+		{% include "includes/banner1.html" %}
+		<!-- //banner -->
+    </div>
 
     <div class="container">
         <div class="row">
@@ -81,6 +89,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{% static 'dist/js/sb-admin-2.js'%}"></script>
+    {% include "includes/footer.html" %}
 
 </body>
 

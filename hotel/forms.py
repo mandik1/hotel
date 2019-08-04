@@ -23,3 +23,8 @@ class SignUpForm(forms.ModelForm):
             raise forms.ValidationError(
                 "Password and confirm password does not match"
             )
+class Contact_form(forms.ModelForm):
+
+    class Meta:
+        model = Contact
+        exclude = ('user',)            

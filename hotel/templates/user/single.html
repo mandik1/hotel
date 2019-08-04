@@ -84,6 +84,7 @@
 							<div class="opinion">
 								<h2>Leave Your Comment</h2>
 								<form action="#" method="post">
+									{% csrf_token %}
 									<input type="text" name="Name" placeholder="Name" required="">
 									<input type="text" name="Email" placeholder="Email" required="">
 									<textarea name="Message" placeholder="Message" required=""></textarea>

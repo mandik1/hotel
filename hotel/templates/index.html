@@ -4,7 +4,7 @@
 
 <body>
 	<script src="{% static 'js/jquery.vide.min.js' %}"></script>
-	<div data-vide-bg="{% static 'video/cook.mp4' %}">
+	<div data-vide-bg="{% static 'video/cook1.mp4' %}">
 		<!-- banner -->
 		{% include "includes/banner.html" %}
 		<!-- //banner -->
@@ -18,7 +18,7 @@
 				<h3>Today Specials</h3>
 			</div>
 			<div class="special-grids">
-			{% for f in food %}
+			{% for f in food|slice:"6" %}
 					<div class="col-md-4 w3l-special-grid">
 						<a href="{% url 'hotel:food_details' f.id %}">
 							<div class="col-md-6 w3ls-special-img" style="background: url('/media/{{f.image}}') no-repeat -17px 0px; background-size: cover;">

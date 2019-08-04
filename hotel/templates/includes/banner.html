@@ -4,7 +4,7 @@
 			<div class="container">
 				<div class="header">
 					<div class="logo">
-						<h1><a href="/">Caviar</a></h1>
+						<h1><a href="/">Food-Mania</a></h1>
 					</div>
 					<div class="top-nav">
 						<nav class="navbar navbar-default">
@@ -14,6 +14,7 @@
 							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 								<ul class="nav navbar-nav">
 									<li><a class="active" href="{% url 'hotel:index' %}">Home</a></li>
+
 									<li><a href="{% url 'hotel:menu' %}">Menu</a></li>
 									{% if user.is_authenticated %}
 										{% if user.is_superuser %}
@@ -33,39 +34,39 @@
 					<div class="clearfix"> </div>
 				</div>
 				<div class="banner-info">
-					<h2>Tasty food served at your doorstep</h2>
-					<p>Experience the fastest delivery. Order now and get your food at your doorstep in 30 minutes!</p>
+					<!-- <h2>Tasty food served at your doorstep</h2> -->
+					<!-- <p>Experience the fastest delivery. Order now and get your food at your doorstep in 30 minutes!</p> -->
 				</div>
 				<div class="banner-grads">
 					<div class="col-md-3 banner-grad">
-						<a href="http://localhost:8000/menu?cuisine=south">
+						<a href="http://localhost:8000/menu?cuisine=pizza">
 							<div class="banner-grad-img">
-								<img src="{% static 'images/south.jpg' %}" alt="" />
-								<h4>South Indian</h4>
+								<img src="{% static 'images/Pizza1.jpg' %}" alt="" height="193px" />
+								<h4>Pizza</h4>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 banner-grad">
-						<a href="http://localhost:8000/menu?cuisine=Gujarati">
+						<a href="http://localhost:8000/menu?cuisine=Burgers">
 							<div class="banner-grad-img">
-								<img src="{% static 'images/gujarat.jpg' %}" alt="" />
-								<h4>Gujarati</h4>
+								<img src="{% static 'images/burger.jpg' %}" alt="" width="350px" height="193px"/>
+								<h4>Burgers</h4>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 banner-grad">
-						<a href="http://localhost:8000/menu?cuisine=fast">
+						<a href="http://localhost:8000/menu?cuisine=rolls">
 							<div class="banner-grad-img">
-								<img src="{% static 'images/fast.jpg' %}" alt="" />
-								<h4>Fast Food</h4>
+								<img src="{% static 'images/chikkenroll.jpg' %}" alt="" height="193px" />
+								<h4>Rolls</h4>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-3 banner-grad">
-						<a href="http://localhost:8000/menu?cuisine=Punjabi">
+						<a href="http://localhost:8000/menu?cuisine=Noodels">
 							<div class="banner-grad-img">
-								<img src="{% static 'images/punjabi.jpg' %}" alt="" />
-								<h4>Punjabi</h4>
+								<img src="{% static 'images/veg haka.jpg' %}" alt="" height="193px" />
+								<h4>Noodels</h4>
 							</div>
 						</a>
 					</div>

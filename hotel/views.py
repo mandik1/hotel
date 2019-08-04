@@ -16,13 +16,14 @@ from django.contrib import messages
 from django.utils import timezone
 from reportlab.pdfgen import canvas
 from .models import Customer, Comment, Order, Food, Data, Cart, OrderContent, Staff, DeliveryBoy
-from .forms import SignUpForm
+from .forms import SignUpForm , Contact_form
 
 from django.contrib.auth import logout
 
 def logout_view(request):
     logout(request)
     return redirect('accounts/login')
+
 
 
 
@@ -91,6 +92,7 @@ def orders_admin(request):
 
 @login_required
 @staff_member_required
+
 def foods_admin(request):
     foods = Food.objects.filter()
     return render(request, 'admin_temp/foods.html', {'foods':foods})
@@ -105,12 +107,12 @@ def menu(request):
     cuisine = request.GET.get('cuisine')
     print(cuisine)
     if cuisine is not None:
-        if ((cuisine == "Gujarati") or (cuisine == "Punjabi")):
+        if ((cuisine == "Burgers") or (cuisine == "Noodels")):
             foods = Food.objects.filter(status="Enabled", course=cuisine)
-        elif(cuisine == "south"):
-            foods = Food.objects.filter(status="Enabled", course="South Indian")
-        elif(cuisine == "fast"):
-            foods = Food.objects.filter(course="Fast")
+        elif(cuisine == "pizza"):
+            foods = Food.objects.filter(status="Enabled", course="Pizza")
+        elif(cuisine == "rolls"):
+            foods = Food.objects.filter(course="Rolls")
     else:
         foods = Food.objects.filter()
     return render(request, 'menu.html', {'foods':foods, 'cuisine':cuisine})
@@ -119,6 +121,16 @@ def menu(request):
 def index(request):
     food = Food.objects.filter().order_by('-num_order')
     return render(request, 'index.html', {'food':food})
+
+def about(request):
+    return render(request, 'about.html',)
+
+
+
+
+# def contact(request):
+#     return render(request, 'contact.html',)
+
 
 
 @login_required
@@ -145,7 +157,7 @@ def confirm_delivery(request, orderID):
     mail_subject = 'Order Delivered successfully'
     to = str(order.customer.customer.email)
     to_email.append(to)
-    from_email = 'nitinthakur229@gmail.com'
+    from_email = 'mandeeepkumar1@gmail.com'
     message = "Hi "+ order.customer.customer.first_name +" Your order was delivered successfully. Please go to your dashboard to see your order history. <br> Your order id is "+ orderID +". Share ypour feedback woth us."
     send_mail(
         mail_subject,
@@ -326,7 +338,7 @@ def placeOrder(request):
     mail_subject = 'Order Placed successfully'
     to = str(customer.customer.email)
     to_email.append(to)
-    from_email = 'nitinthakur229@gmail.com'
+    from_email = 'mandeeepkumar1@gmail.com'
     message = "Hi "+ customer.customer.first_name +" Your order was placed successfully. Please go to your dashboard to see your order history. <br> Your order id is "+ str(Order.id) +""
     send_mail(
         mail_subject,
@@ -334,7 +346,7 @@ def placeOrder(request):
         from_email,
         to_email,
     )
-    return redirect('hotel:cart')
+    return redirect('hotel:my_orders')
 
 @login_required
 def my_orders(request):
@@ -357,4 +369,21 @@ def delivery_boy(request):
             return render(request, 'delivery_boy.html', {'orders':orders})
     
     return redirect('hotel:index')
-        
+
+
+@login_required
+def contact_form(request):
+    template = 'contact.html'
+    usr = request.user
+    form = Contact_form(request.POST or None)
+    if form.is_valid():
+        abc = form.save(commit=False)
+        abc.user = usr
+        abc.save()
+        return redirect('hotel:contacts')
+    return render(request,template,{'form':form})
+    
+
+
+# def responsemessage(request):
+#     return render(request, 'message.html',)
